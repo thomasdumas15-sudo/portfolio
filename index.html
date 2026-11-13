@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thomas Dumas — Portfolio</title>
+  <meta name="description" content="Thomas Dumas — social media manager, photographe, vidéaste, graphiste. Portfolio : vidéo, photo, direction artistique, réseaux sociaux.">
+  <meta property="og:title" content="Thomas Dumas — Portfolio">
+  <meta property="og:description" content="Social media manager, photographe, vidéaste, graphiste.">
+  <meta property="og:image" content="assets/img/cover-inside.jpg">
+  <meta name="theme-color" content="#121212">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23121212'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='28' fill='%23ededed'>TD</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="topbar">
+    <a class="brand" href="#/">Thomas Dumas</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#/" data-nav="home">Travaux</a>
+      <a href="#/a-propos" data-nav="a-propos">À propos</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <footer class="footer" id="contact">
+    <div class="footer__inner">
+      <p class="footer__title">Travaillons ensemble.</p>
+      <ul class="footer__links" id="footer-links"></ul>
+      <p class="footer__copy">© <span id="year"></span> Thomas Dumas</p>
+    </div>
+  </footer>
+
+  <!-- Visionneuse photo -->
+  <dialog class="lightbox" id="lightbox" aria-label="Visionneuse photo">
+    <button class="lb-btn lb-close" data-lb="close" aria-label="Fermer">✕</button>
+    <button class="lb-btn lb-prev" data-lb="prev" aria-label="Photo précédente">←</button>
+    <figure class="lb-figure"><img alt=""><figcaption class="lb-count"></figcaption></figure>
+    <button class="lb-btn lb-next" data-lb="next" aria-label="Photo suivante">→</button>
+  </dialog>
+
+  <!-- Lecteur vidéo -->
+  <dialog class="player" id="player" aria-label="Lecteur vidéo">
+    <button class="lb-btn lb-close" data-player="close" aria-label="Fermer">✕</button>
+    <div class="player__frame"></div>
+  </dialog>
+
+  <script src="assets/manifest.js"></script>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
