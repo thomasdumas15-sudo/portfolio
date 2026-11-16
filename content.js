@@ -19,7 +19,7 @@
 window.SITE = {
   name: "Thomas Dumas",
   tagline: "Filmer, photographier, créer, écrire, autant de façons de refuser l'oubli.",
-  roles: ["Social media manager", "Photographe", "Vidéaste", "Graphiste"],
+  roles: ["Responsable communication", "Social media manager", "Photographe", "Vidéaste", "Graphiste"],
   socials: [
     { label: "Instagram", url: "https://www.instagram.com/thomasdms_/" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/thomas-dumas-065230244" }
@@ -168,31 +168,35 @@ window.ABOUT = {
   slug: "a-propos",
   title: "À propos",
   cover: "cover-about",
-  // Image du CV (cliquable pour l'agrandir). Mettre "" pour la masquer.
-  cv: "cover-portrait",
+  // CV téléchargeables (fichiers PDF dans assets/cv/). L'aperçu affiché est celui du premier.
+  cvs: [
+    { label: "CV en français", lang: "FR", file: "assets/cv/thomas-dumas-cv-fr.pdf", preview: "assets/cv/preview-fr.jpg" },
+    { label: "CV in English", lang: "EN", file: "assets/cv/thomas-dumas-cv-en.pdf", preview: "assets/cv/preview-en.jpg" }
+  ],
   text: [
-    "Social media manager, photographe, vidéaste, graphiste. Depuis trois ans, je pilote la communication digitale de l'Elan Chalon.",
-    "J'aime cette polyvalence parce qu'elle force à penser une marque comme un tout, pas comme une succession de formats isolés."
+    "Social media manager issu du sport professionnel (Betclic Élite), aujourd'hui responsable communication d'une clinique de chirurgie esthétique premium à Lyon. J'interviens de la création de contenus à la stratégie digitale, avec un vrai goût du terrain et du contact.",
+    "Photographe, vidéaste, graphiste : j'aime cette polyvalence parce qu'elle force à penser une marque comme un tout, pas comme une succession de formats isolés."
   ],
   timeline: [
     {
       title: "Expériences",
       items: [
-        { when: "2023 — 2026", what: "Social Media Manager", where: "Elan Chalon, Chalon-sur-Saône" },
-        { when: "2023 — 2026", what: "Photographe & vidéaste freelance", where: "Équipe de France, FFBB, LFB" },
-        { when: "2022 — 2023", what: "Community Manager", where: "First Team, Paris" },
-        { when: "2021 — 2023", what: "Responsable de la communication (bénévole)", where: "Francheville Basket" }
+        { when: "2026 — Aujourd'hui", what: "Responsable Communication", where: "Clinique XANADU, Lyon" },
+        { when: "2023 — 2026", what: "Social Media Manager", where: "Élan Chalon (Betclic Élite), Chalon-sur-Saône" },
+        { when: "2023 — 2026", what: "Photographe & vidéaste freelance", where: "FFBB (Équipes de France), LNB, LFB" },
+        { when: "2024 — 2025", what: "Commercial freelance", where: "Prothermo, Lyon" },
+        { when: "2022 — 2023", what: "Community Manager", where: "First Team, Paris" }
       ]
     },
     {
       title: "Formation",
       items: [
-        { when: "2025", what: "Master 2 Manager de la Communication", where: "SupDeCom Lyon" },
+        { when: "2025", what: "Master 2 Manager de la Communication", where: "SupDeCom Lyon, en alternance" },
         { when: "2023", what: "Licence Gestion Management", where: "IAE Lyon" }
       ]
     }
   ],
-  skills: ["Suite Adobe (Photoshop, Premiere Pro…)", "Photographie & vidéographie", "Storytelling de marque", "Développement de communautés", "Meta Ads", "Gestion de projet"]
+  skills: ["Premiere Pro", "After Effects", "Lightroom", "Photoshop", "Figma", "Meta Ads", "Meta Business Suite", "Brevo", "WordPress", "Google Analytics", "Storytelling de marque", "Développement de communautés", "Gestion de projet"]
 };
 
 function range(prefix, n) {

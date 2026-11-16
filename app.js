@@ -14,7 +14,9 @@
   const footerLinks = document.getElementById("footer-links");
   const socials = [...window.SITE.socials];
   if (window.SITE.email) socials.unshift({ label: window.SITE.email, url: `mailto:${window.SITE.email}` });
-  footerLinks.innerHTML = socials.map(s => `<li><a class="pill" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a></li>`).join("");
+  const cvs = window.ABOUT.cvs || [];
+  const cvLinks = () => cvs.map(c => `<li><a class="pill pill--solid" href="${esc(c.file)}" target="_blank" rel="noopener" download>${esc(c.label)} <span class="pill__tag">PDF</span></a></li>`).join("");
+  footerLinks.innerHTML = cvLinks() + socials.map(s => `<li><a class="pill" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a></li>`).join("");
   document.getElementById("year").textContent = new Date().getFullYear();
 
   /* ---------- Pages ---------- */
@@ -124,7 +126,7 @@
       <div class="about">
         <div class="about__text">
           ${a.text.map(t => `<p>${esc(t)}</p>`).join("")}
-          <ul class="about__links">${socials.map(s => `<li><a class="pill" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a></li>`).join("")}</ul>
+          <ul class="about__links">${cvLinks()}${socials.map(s => `<li><a class="pill" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a></li>`).join("")}</ul>
           ${a.timeline.map(sec => `
             <section class="timeline">
               <h2 class="timeline__title">${esc(sec.title)}</h2>
@@ -136,9 +138,13 @@
           ${a.skills ? `<section class="timeline"><h2 class="timeline__title">Compétences</h2>
             <ul class="tags">${a.skills.map(s => `<li>${esc(s)}</li>`).join("")}</ul></section>` : ""}
         </div>
-        ${a.cv ? `<figure class="about__cv">
-          <div class="masonry masonry--single"><button type="button" data-photo="${a.cv}" aria-label="Agrandir le CV">${img(a.cv, { alt: "CV de Thomas Dumas" })}</button></div>
-          <figcaption>CV — cliquer pour agrandir</figcaption>
+        ${cvs.length ? `<figure class="about__cv">
+          <div class="cv-tabs" role="tablist" aria-label="Langue du CV">${cvs.map((c, i) =>
+            `<button type="button" role="tab" class="cv-tab" data-cv="${i}" aria-selected="${i === 0}">${esc(c.lang)}</button>`).join("")}</div>
+          <a class="cv-preview" href="${esc(cvs[0].file)}" target="_blank" rel="noopener">
+            <img src="${esc(cvs[0].preview)}" width="989" height="1400" alt="Aperçu du CV de Thomas Dumas" loading="lazy">
+          </a>
+          <figcaption>Cliquer pour ouvrir le PDF</figcaption>
         </figure>` : ""}
       </div>
       ${nextLink(a.slug)}
@@ -247,6 +253,15 @@
       gallery = [...ph.parentElement.querySelectorAll("[data-photo]")].map(b => b.dataset.photo);
       showPhoto(gallery.indexOf(ph.dataset.photo));
       lb.showModal();
+      return;
+    }
+    const tab = e.target.closest("[data-cv]");
+    if (tab) {
+      const c = cvs[+tab.dataset.cv];
+      const fig = tab.closest(".about__cv");
+      fig.querySelectorAll("[data-cv]").forEach(t => t.setAttribute("aria-selected", t === tab));
+      fig.querySelector(".cv-preview").href = c.file;
+      fig.querySelector(".cv-preview img").src = c.preview;
       return;
     }
     const yt = e.target.closest("[data-yt]");
