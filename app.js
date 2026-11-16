@@ -38,7 +38,7 @@
   const pill = (href, label, { solid = false, ext: external = true, extra = "" } = {}) =>
     `<li><a class="pill${solid ? " pill--solid" : ""}" href="${esc(href)}" ${external ? 'target="_blank" rel="noopener"' : ""} ${extra}>${label}</a></li>`;
   const mailLink = () => SITE.email ? pill(`mailto:${SITE.email}`, `Écrire à ${esc(SITE.email)}`, { solid: true, ext: false }) : "";
-  const cvLinks = () => cvs.map(c => pill(c.file, `${esc(c.label)} <span class="pill__tag">PDF</span>`, { extra: "download" })).join("");
+  const cvLinks = () => cvs.map(c => pill(c.file, `${esc(c.label)} <span class="pill__tag">PDF</span>`)).join("");
   const socialLinks = () => socials.map(s => pill(s.url, `${esc(s.label)} ↗`)).join("");
 
   document.getElementById("footer-links").innerHTML = mailLink() + cvLinks() + socialLinks();
@@ -53,7 +53,7 @@
         <p class="hero__roles">${SITE.roles.map(esc).join("\u00a0· ")}</p>
         <ul class="hero__actions">
           <li><a class="pill pill--solid" href="#travaux" data-scroll="travaux">Voir les projets ↓</a></li>
-          ${cvs[0] ? pill(cvs[0].file, `Télécharger mon CV <span class="pill__tag">PDF</span>`, { extra: "download" }) : ""}
+          ${cvs[0] ? pill(cvs[0].file, `Voir mon CV <span class="pill__tag">PDF</span>`) : ""}
           <li><a class="pill" href="#contact">Me contacter</a></li>
         </ul>
       </section>
