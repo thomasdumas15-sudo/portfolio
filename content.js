@@ -7,6 +7,7 @@
   Types de blocs possibles dans "blocks" :
     { type: "text", title?: "...", text: "..." }
     { type: "photos", title?: "...", text?: "...", images: ["photo-1-01", ...] }
+    Chaque projet peut aussi avoir un "summary" : une phrase courte affichée sur la page d'accueil.
     { type: "youtube", title?: "...", items: [{ id: "xxxx", cover?: "inside-01", label?: "..." }] }
     { type: "featured", id: "youtubeId", label?: "..." }            -> grande vidéo YouTube
     { type: "adobe", title?: "...", text?: "...", items: [{ id: "xxxx", ratio: "9/16" | "16/9" | "4/3" }] }
@@ -24,8 +25,9 @@ window.SITE = {
     { label: "Instagram", url: "https://www.instagram.com/thomasdms_/" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/thomas-dumas-065230244" }
   ],
-  // Adresse e-mail affichée dans le pied de page (laisser vide pour la masquer)
-  email: ""
+  description: "Thomas Dumas, responsable communication, social media manager, photographe et vidéaste à Lyon. Vidéo, photo, direction artistique et réseaux sociaux dans le sport professionnel.",
+  // Adresse e-mail affichée (bouton « Écrire à… »). Laisser vide pour la masquer.
+  email: "thomasdumas15@gmail.com"
 };
 
 window.PROJECTS = [
@@ -33,6 +35,7 @@ window.PROJECTS = [
     slug: "inside-elan-chalon",
     title: "Inside Elan Chalon",
     kind: "Série documentaire",
+    summary: "Les coulisses d'une saison : 10 épisodes documentaires.",
     cover: "cover-inside",
     intro:
       "Une saison de basket, ce sont des trajets, des hôtels, des rires dans les vestiaires, des silences avant un gros déplacement. Ces Insides de saison capturent ce hors-champ avec la volonté de raconter le club autrement.",
@@ -68,6 +71,7 @@ window.PROJECTS = [
     slug: "production-video",
     title: "Production vidéo",
     kind: "Vidéo",
+    summary: "Teasers, recaps, brand content et formats courts.",
     cover: "cover-video",
     intro:
       "Trois saisons de production vidéo pour l'Elan Chalon : teasers de match, résumés, recaps, brand content partenaires et formats émotionnels. De la captation au montage, en passant par l'étalonnage et le sound design, chaque vidéo répond à un objectif éditorial précis : faire monter l'attente avant un match, prolonger l'expérience après, ou raconter la saison.",
@@ -104,6 +108,7 @@ window.PROJECTS = [
     slug: "reseaux-sociaux",
     title: "Réseaux sociaux",
     kind: "Social media",
+    summary: "Reels et publications pour l'Instagram du club.",
     cover: "photo-5-01",
     intro:
       "Une sélection de publications réalisées pour le compte Instagram de l'Elan Chalon : reels, annonces et formats d'équipe.",
@@ -133,6 +138,7 @@ window.PROJECTS = [
     slug: "direction-artistique-photos",
     title: "Direction artistique & photos",
     kind: "Photo · DA",
+    summary: "Shootings, campagnes maillot et création graphique.",
     cover: "cover-photo",
     intro:
       "Annonce du nouveau maillot européen, portée par Jordan. Direction artistique, mise en scène et shooting pensés comme une campagne à part entière : au-delà du simple visuel produit, l'idée était de donner au maillot une présence cinématographique, à la hauteur de l'enjeu sportif que représente la Coupe d'Europe pour le club.",
@@ -148,6 +154,7 @@ window.PROJECTS = [
     slug: "corporate-evenementiel",
     title: "Corporate & événementiel",
     kind: "Événementiel",
+    summary: "Films d'événements pour les partenaires du club.",
     cover: "cover-corporate",
     intro:
       "Films d'événements réalisés pour les partenaires de l'Elan Chalon. Soirées VIP, activations, temps forts clients. De la captation au montage final, pour restituer l'atmosphère d'une soirée tout en valorisant la marque partenaire et le club.",
@@ -167,6 +174,7 @@ window.PROJECTS = [
 window.ABOUT = {
   slug: "a-propos",
   title: "À propos",
+  summary: "Parcours, compétences et CV en français / anglais.",
   cover: "cover-about",
   // CV téléchargeables (fichiers PDF dans assets/cv/). L'aperçu affiché est celui du premier.
   cvs: [
