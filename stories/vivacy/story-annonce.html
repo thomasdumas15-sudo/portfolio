@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Story Soirée Vivacy</title>
+<style>
+  /* Remplacer l'URL ci-dessous par une photo de la soirée pour l'utiliser en fond */
+  :root { --photo: none; --ink:#fff; --soft:rgba(255,255,255,.72); --line:rgba(255,255,255,.55); --accent:#7fe0d0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#000; }
+  .story {
+    width:1080px; height:1920px; position:relative; overflow:hidden; color:var(--ink);
+    font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+    background:
+      radial-gradient(ellipse 60% 35% at 85% 18%, rgba(88,130,255,.55), transparent 70%),
+      radial-gradient(ellipse 55% 30% at 10% 70%, rgba(40,190,200,.35), transparent 70%),
+      radial-gradient(ellipse 70% 40% at 50% 105%, rgba(70,60,200,.55), transparent 70%),
+      linear-gradient(170deg,#0a1a5c 0%,#071038 45%,#04081f 100%);
+  }
+  .photo { position:absolute; inset:0; background:var(--photo) center/cover no-repeat; filter:saturate(1.1); }
+  .veil  { position:absolute; inset:0; background:linear-gradient(180deg,rgba(4,10,40,.35),rgba(4,10,40,.55) 40%,rgba(4,10,40,.75)); }
+  /* bokeh */
+  .b { position:absolute; border-radius:50%; filter:blur(18px); opacity:.45; }
+  .content { position:absolute; inset:0; padding:300px 140px 0; }
+  .brand { text-align:center; margin-bottom:56px; }
+  .brand .mark { font-size:58px; font-weight:600; letter-spacing:.32em; padding-left:.32em; }
+  .brand .sub  { font-size:15px; letter-spacing:1.1em; padding-left:1.1em; margin-top:6px; color:var(--soft); }
+  h1 { font-weight:300; font-size:156px; line-height:.9; letter-spacing:-.02em; }
+  h2 { font-weight:800; font-size:108px; line-height:1; letter-spacing:-.01em; margin-top:4px; }
+  .row { display:flex; justify-content:space-between; align-items:center;
+         border-top:2px solid var(--line); font-weight:700; text-transform:uppercase; }
+  .meta .row { font-size:30px; padding:20px 0; letter-spacing:.02em; }
+  .meta { margin-top:36px; border-bottom:2px solid var(--line); }
+  .prog { margin-top:0; border-bottom:2px solid var(--line); }
+  .meta { border-bottom:none; }
+  .prog .row { padding:16px 0; align-items:center; }
+  .time { font-size:42px; font-weight:700; letter-spacing:-.01em; display:flex; align-items:baseline; gap:14px; }
+  .time .arr { font-size:30px; font-weight:400; color:var(--soft); }
+  .time sup { font-size:20px; font-weight:500; color:var(--soft); margin-left:-8px; }
+  .what { text-align:right; }
+  .what .t { font-size:32px; font-weight:800; line-height:1.08; }
+  .what .t .live { display:inline-block; font-size:15px; font-weight:700; letter-spacing:.14em; color:#06123d;
+                   background:var(--accent); border-radius:30px; padding:5px 13px; margin-right:12px; vertical-align:middle; transform:translateY(-3px); }
+  .what .d { font-size:19px; font-weight:500; color:var(--soft); text-transform:none; margin-top:5px; letter-spacing:.01em; }
+  .foot { position:absolute; left:0; right:0; bottom:210px; text-align:center; }
+  .foot .place { font-size:30px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; }
+  .foot .city  { font-size:19px; letter-spacing:.5em; color:var(--soft); margin-top:12px; text-transform:uppercase; }
+  .meta { border-bottom:2px solid var(--line); }
+  .tag { margin-top:70px; font-size:44px; font-weight:300; line-height:1.25; }
+</style>
+</head>
+<body>
+<div class="story">
+  <div class="photo"></div>
+  <div class="veil"></div>
+  <div class="b" style="width:120px;height:120px;left:820px;top:300px;background:#8fb2ff"></div>
+  <div class="b" style="width:70px;height:70px;left:120px;top:560px;background:#9ff"></div>
+  <div class="b" style="width:160px;height:160px;left:900px;top:1380px;background:#6c7dff"></div>
+  <div class="b" style="width:90px;height:90px;left:60px;top:1600px;background:#7fe0d0"></div>
+
+  <div class="content">
+    <div class="brand"><div class="mark">VIVACY</div><div class="sub">PARIS</div></div>
+
+    <h1>SOIRÉE</h1>
+    <h2>VIVACY</h2>
+
+    <div class="meta">
+      <div class="row"><span>Mardi 17 novembre</span><span>2026</span></div>
+      <div class="row"><span>Masterclass B.A.S.E</span><span>18h — 22h</span></div>
+    </div>
+
+    <div class="tag">3 leviers de régénération<br>et de qualité de peau,<br>réunis dans une seule<br>logique de soin.</div>
+  </div>
+
+  <div class="foot">
+    <div class="place">Château de Faveyrolles</div>
+    <div class="city">Ollioules</div>
+  </div>
+</div>
+</body>
+</html>
