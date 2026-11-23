@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Chapitres Soirée Vivacy Marseille</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Libre+Baskerville:ital@1&family=Bodoni+Moda:wght@500&display=block" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:transparent; }
+  body.preview { background:#4a4a4a url(var(--bg)) center/cover; }
+  .story { width:1080px; height:1920px; position:relative; color:#fff; font-family:Montserrat,sans-serif;
+           text-shadow:0 2px 14px rgba(0,0,0,.25); }
+  .head { position:absolute; top:330px; left:0; right:0; text-align:center; }
+  .mc   { font-weight:700; font-size:100px; letter-spacing:-.02em; line-height:1; }
+  .base { font-family:"Libre Baskerville",serif; font-style:italic; font-size:112px; line-height:1; margin-top:10px; letter-spacing:-.01em; }
+  .logo { display:inline-block; margin-top:18px; text-align:center; }
+  .logo .v { font-family:"Bodoni Moda",serif; font-weight:500; font-size:58px; letter-spacing:.06em; line-height:1; }
+  .logo .p { font-size:11px; font-weight:600; letter-spacing:1.1em; margin-top:4px; padding-left:1.1em; }
+  .list { position:absolute; top:668px; left:100px; width:880px; }
+  .pill { position:relative; height:94px; border-radius:47px; margin-bottom:16px;
+          background:rgba(55,58,64,.55); display:flex; align-items:center; justify-content:center; text-align:center; }
+  .pill .n { position:absolute; left:34px; top:50%; transform:translateY(-50%); font-size:21px; font-weight:600; }
+  .pill .t { font-size:25px; font-weight:700; line-height:1.15; letter-spacing:-.005em; }
+  .pill .s { font-size:19px; font-weight:500; margin-top:4px; }
+  .pill.on { background:#f4f2ee; color:#2a2a2a; text-shadow:none; box-shadow:0 6px 24px rgba(0,0,0,.18); }
+  .pill.on::after { content:""; position:absolute; right:34px; top:50%; width:12px; height:12px; margin-top:-6px; border-radius:50%; background:#b08a3e; }
+  .foot { position:absolute; top:1490px; left:0; right:0; text-align:center; }
+  .foot .v { font-size:84px; }
+  .foot .p { font-size:15px; }
+  /* touches de bleu */
+  .base { color:#8fb0ff; }
+  .head .logo .p, .foot .p { color:#8fb0ff; }
+  .pill { border:2px solid rgba(110,150,255,.45); }
+  .pill .n { left:22px; width:50px; height:50px; border-radius:50%; background:#2f5bff; color:#fff;
+             display:flex; align-items:center; justify-content:center; text-shadow:none; }
+  .pill.on { background:linear-gradient(100deg,#1d3fd6,#3d74ff); color:#fff; border-color:#9dbaff;
+             box-shadow:0 8px 30px rgba(47,91,255,.45); }
+  .pill.on .n { background:#fff; color:#1d3fd6; }
+  .pill.on::after { background:#fff; }
+</style>
+</head>
+<body>
+<div class="story">
+  <div class="head">
+    <div class="mc">Masterclass</div>
+    <div class="base">B.A.S.E</div>
+    <div class="logo"><div class="v">VIVACY</div><div class="p">PARIS</div></div>
+  </div>
+  <div class="list">
+    <div class="pill"><span class="n">00</span><div><div class="t">Préparatifs de la soirée</div><div class="s">Clinique Phenicia · Marseille</div></div></div>
+    <div class="pill"><span class="n">01</span><div><div class="t">C'est parti pour la masterclass B.A.S.E</div><div class="s">Mardi 24 novembre · 18h30 – 22h</div></div></div>
+    <div class="pill"><span class="n">02</span><div><div class="t">Introduction</div><div class="s">avec Julie DUSSOSSOY &amp; Sébastien PLISSONNEAU</div></div></div>
+    <div class="pill"><span class="n">03</span><div><div class="t">Live Demo NOVUMA®</div><div class="s">avec le Dr Jaafar MEZIANE</div></div></div>
+    <div class="pill"><span class="n">04</span><div><div class="t">Live Demo HYDROMAX + REJURAN® I</div><div class="s">avec le Dr Vanessa CINGALA</div></div></div>
+    <div class="pill"><span class="n">05</span><div><div class="t">Live Demo REJURAN®</div><div class="s">avec le Dr Vanessa CINGALA</div></div></div>
+  </div>
+  <div class="foot logo"><div class="v">VIVACY</div><div class="p">PARIS</div></div>
+</div>
+<script>
+  const a = new URLSearchParams(location.search).get('active');
+  if (a !== null) document.querySelectorAll('.pill')[+a]?.classList.add('on');
+</script>
+</body>
+</html>
