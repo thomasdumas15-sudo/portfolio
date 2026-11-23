@@ -28,15 +28,18 @@
   .foot { position:absolute; top:1490px; left:0; right:0; text-align:center; }
   .foot .v { font-size:84px; }
   .foot .p { font-size:15px; }
-  /* touches de bleu */
-  .base { color:#8fb0ff; }
-  .head .logo .p, .foot .p { color:#8fb0ff; }
-  .pill { border:2px solid rgba(110,150,255,.45); }
-  .pill .n { left:22px; width:50px; height:50px; border-radius:50%; background:#2f5bff; color:#fff;
+  /* palette du programme Vivacy : bleu foncé, bleu clair, bleu-vert */
+  :root { --fonce:#242b69; --clair:#3d55c9; --vert:#0bbab4; }
+  .base { color:var(--vert); }
+  .head .logo .p, .foot .p { color:var(--vert); }
+  .pill { background:rgba(36,43,105,.72); border:2px solid rgba(61,85,201,.75); }
+  .pill .n { left:22px; width:50px; height:50px; border-radius:50%; background:var(--clair); color:#fff;
              display:flex; align-items:center; justify-content:center; text-shadow:none; }
-  .pill.on { background:linear-gradient(100deg,#1d3fd6,#3d74ff); color:#fff; border-color:#9dbaff;
-             box-shadow:0 8px 30px rgba(47,91,255,.45); }
-  .pill.on .n { background:#fff; color:#1d3fd6; }
+  .pill .s { color:#bfeeed; }
+  .pill.on { background:linear-gradient(100deg,var(--fonce) 0%,var(--clair) 55%,var(--vert) 100%); color:#fff;
+             border-color:var(--vert); box-shadow:0 8px 30px rgba(11,186,180,.35); }
+  .pill.on .n { background:#fff; color:var(--fonce); }
+  .pill.on .s { color:#fff; }
   .pill.on::after { background:#fff; }
 </style>
 </head>
