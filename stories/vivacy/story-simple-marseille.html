@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Story simple Vivacy Marseille</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Libre+Baskerville:ital@1&family=Bodoni+Moda:wght@500&display=block" rel="stylesheet">
+<style>
+  :root { --fonce:#242b69; --clair:#3d55c9; --vert:#0bbab4; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:transparent; }
+  .story { width:1080px; height:1920px; position:relative; color:#fff; font-family:Montserrat,sans-serif;
+           text-shadow:0 2px 14px rgba(0,0,0,.25); }
+  .head { position:absolute; top:330px; left:0; right:0; text-align:center; }
+  .mc   { font-weight:700; font-size:100px; letter-spacing:-.02em; line-height:1; }
+  .base { font-family:"Libre Baskerville",serif; font-style:italic; font-size:112px; line-height:1; margin-top:10px; color:var(--vert); }
+  .logo { display:inline-block; margin-top:18px; text-align:center; }
+  .logo .v { font-family:"Bodoni Moda",serif; font-weight:500; font-size:58px; letter-spacing:.06em; line-height:1; }
+  .logo .p { font-size:11px; font-weight:700; letter-spacing:1.1em; margin-top:4px; padding-left:1.1em; color:var(--vert); }
+  .pill { position:absolute; top:820px; left:100px; width:880px; min-height:170px; border-radius:85px; padding:30px 60px;
+          display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+          background:linear-gradient(100deg,var(--fonce) 0%,var(--clair) 55%,var(--vert) 100%);
+          border:2px solid var(--vert); box-shadow:0 10px 36px rgba(11,186,180,.35); }
+  .pill .t { font-size:46px; font-weight:800; line-height:1.1; letter-spacing:-.01em; }
+  .pill .s { font-size:28px; font-weight:500; margin-top:10px; }
+  .foot { position:absolute; top:1490px; left:0; right:0; text-align:center; }
+  .foot .v { font-size:84px; } .foot .p { font-size:15px; }
+</style>
+</head>
+<body>
+<div class="story">
+  <div class="head">
+    <div class="mc">Masterclass</div>
+    <div class="base">B.A.S.E</div>
+    <div class="logo"><div class="v">VIVACY</div><div class="p">PARIS</div></div>
+  </div>
+  <div class="pill"><div class="t" id="t"></div><div class="s" id="s"></div></div>
+  <div class="foot logo"><div class="v">VIVACY</div><div class="p">PARIS</div></div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.getElementById('t').innerHTML = q.get('t') || 'Soirée B.A.S.E';
+  document.getElementById('s').innerHTML = q.get('s') || 'Clinique Phenicia · Marseille';
+</script>
+</body>
+</html>
