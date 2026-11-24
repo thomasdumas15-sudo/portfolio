@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Story éditoriale Vivacy Marseille</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&family=Libre+Baskerville:ital@1&family=Bodoni+Moda:wght@500&display=block" rel="stylesheet">
+<style>
+  :root { --fonce:#242b69; --clair:#3d55c9; --vert:#0bbab4; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:transparent; }
+  .story { width:1080px; height:1920px; position:relative; color:#fff; font-family:Montserrat,sans-serif;
+           text-shadow:0 2px 16px rgba(0,0,0,.3); }
+  .top { position:absolute; top:250px; left:90px; right:90px; display:flex; justify-content:space-between; align-items:flex-end;
+         padding-bottom:18px; border-bottom:3px solid var(--vert); }
+  .top .v { font-family:"Bodoni Moda",serif; font-size:52px; letter-spacing:.06em; line-height:1; }
+  .top .r { font-size:22px; font-weight:700; letter-spacing:.22em; text-align:right; line-height:1.5; }
+  .top .r b { color:var(--vert); }
+  .base { position:absolute; top:375px; left:70px; }
+  .base .row { display:flex; align-items:baseline; height:196px; }
+  .base .L { font-size:240px; font-weight:900; line-height:.82; margin-right:22px; text-shadow:none;
+             background:linear-gradient(160deg,#6f8bff 0%,var(--clair) 45%,var(--vert) 100%);
+             -webkit-background-clip:text; background-clip:text; color:transparent;
+             filter:drop-shadow(0 4px 14px rgba(0,0,0,.25)); }
+  .base .row:nth-child(even) .L { background:linear-gradient(160deg,#fff 0%,#c9f3f1 100%); -webkit-background-clip:text; background-clip:text; }
+  .base .w { font-size:34px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; }
+  .base .w span { display:block; font-size:18px; font-weight:600; letter-spacing:.3em; color:var(--vert); margin-top:8px; }
+  .bottom { position:absolute; top:1235px; left:90px; right:90px; }
+  .badge { display:inline-flex; align-items:center; gap:14px; padding:12px 26px; border-radius:40px;
+           background:linear-gradient(100deg,var(--fonce),var(--clair) 55%,var(--vert)); font-size:24px; font-weight:700;
+           letter-spacing:.2em; text-shadow:none; }
+  .badge i { width:12px; height:12px; border-radius:50%; background:#fff; box-shadow:0 0 0 6px rgba(255,255,255,.25); }
+  .t { font-family:"Libre Baskerville",serif; font-style:italic; font-size:92px; line-height:1.08; margin-top:34px; letter-spacing:-.01em; }
+  .s { font-size:34px; font-weight:600; margin-top:22px; letter-spacing:.02em; }
+  .s:empty { display:none; }
+  .line { height:3px; width:180px; background:var(--vert); margin-top:36px; }
+</style>
+</head>
+<body>
+<div class="story">
+  <div class="top">
+    <div class="v">VIVACY</div>
+    <div class="r">MASTERCLASS<br><b>MARSEILLE · 24.11</b></div>
+  </div>
+  <div class="base">
+    <div class="row"><div class="L">B</div><div class="w">iology</div></div>
+    <div class="row"><div class="L">A</div><div class="w">dvanced</div></div>
+    <div class="row"><div class="L">S</div><div class="w">kin</div></div>
+    <div class="row"><div class="L">E</div><div class="w">ducation</div></div>
+  </div>
+  <div class="bottom">
+    <div class="badge"><i></i><span id="b"></span></div>
+    <div class="t" id="t"></div>
+    <div class="s" id="s"></div>
+    <div class="line"></div>
+  </div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  b.textContent = q.get('b') || '18H30';
+  t.innerHTML = q.get('t') || 'Soirée B.A.S.E';
+  s.innerHTML = q.get('s') ?? 'Clinique Phenicia';
+</script>
+</body>
+</html>
